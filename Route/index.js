@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { isLogedIn } = require('../Midelwares/auth.js');
+const { isLogedIn } = require('../Middleware/auth.js');
 
 router.get("/", isLogedIn, (req, res) => {
 

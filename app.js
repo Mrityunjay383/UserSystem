@@ -7,7 +7,8 @@ const passport = require('passport');
 const port = process.env.PORT || 3000;
 
 // Routers
-const indexRouter = require("./routes/index");
+const indexRouter = require("./Route/index");
+const authRouter = require("./Route/auth");
 
 const app = express();
 
@@ -25,7 +26,9 @@ mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useUnifiedTop
 
 // Using Routes
 app.use("/", indexRouter);
+app.use("/auth", authRouter);
+
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${port}...`);
 });

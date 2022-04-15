@@ -3,9 +3,9 @@ const router = express.Router();
 const session = require('express-session');
 const passport = require('passport');
 
-const { auth, isLogedIn } = require('../Midelwares/auth.js');
+const { auth, isLogedIn } = require('../Middleware/auth.js');
 
-const User = require("../models/user");
+const User = require("../Model/user");
 
 
 router.post("/login", (req, res) => {
