@@ -5,7 +5,7 @@ const { isLogedIn } = require('../Middleware/auth.js');
 
 router.get("/", isLogedIn, (req, res) => {
 
-  res.render("index", {isLogedIn: req.isLogedIn});
+  res.status(200).json({isLogedIn: req.isLogedIn})
 });
 
 module.exports = router
